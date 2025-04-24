@@ -63,16 +63,12 @@
         <div class="form-group">
             <label for="country">انتخاب کشور🌍</label>
             <select id="country">
-                <option value="turkey">ترکیه🇹🇷</option>
-                <option value="germany">المان🇩🇪</option>
+  >
                 <option value="bahrain">بحرین🇧🇭</option>
-                 <option value="uk">🇬🇧انگلیس</option>
                  <option value="france">🇨🇵فرانسه</option>
                  <option value="russia">🇷🇺روسیه</option>
                  <option value="japan">🇯🇵ژاپن</option>
                  <option value="india">🇮🇳هند</option>
-                 <option value="canada">🇨🇦کانادا</option>                 
-                <option value="uae">امارات🇦🇪</option> <!-- کشور امارات اضافه شد -->
             </select>
         </div>
 
@@ -93,12 +89,6 @@
             <label for="dns4">تعداد مورد نظر🖨️</label>
             <input type="number" id="dns4" placeholder="تعداد مورد نظر را وارد کنیدد">
         </div>
-
-        <!-- وارد کردن تعداد کاربر -->        
-        <div class="form-group">
-            <label for="user">تعداد کاربر 🥷</label>
-            <input type="number" id="user" placeholder="تعداد مورد نظر را وارد کنید">
-        </div>
         
         
         <!-- دکمه ساخت دی‌ان‌اس نسل 4 و نسل 6 -->
@@ -110,24 +100,6 @@
         <!-- دکمه کپی کردن دی‌ان‌اس ها -->
         <button class="btn" id="copyDns">کپی کردن دی‌ان‌اس ها</button>
 
-        <!-- دکمه انتخاب وی آی پی -->
-        <button class="btn" id="vipButton">انتخاب وی آی پی</button>
-        <div id="vipOptions" style="display: none;">
-            <label><input type="radio" name="vip" value="gold"> gold🥇</label><br>
-            <label><input type="radio" name="vip" value="silver"> 🥈 Silver</label>
-        </div>
-
-        <!-- دکمه انتخاب نوع نت -->
-        <button class="btn" id="netButton">انتخاب نوع نت</button>
-        <div id="netOptions" style="display: none;">
-            <label><input type="radio" name="net" value="irancell"> 1️⃣ایرانسل</label><br>
-            <label><input type="radio" name="net" value="modem"> 2️⃣مودم</label><br>
-            <label><input type="radio" name="net" value="mci"> 3️⃣همراه اول</label><br>
-            <label><input type="radio" name="net" value="rightel"> 4️⃣رایتل</label><br>
-            <label><input type="radio" name="net" value="mbn"> 5️⃣مبین نت</label><br>
-            <label><input type="radio" name="net" value="shatel"> 6️⃣شاتل</label>
-        </div>
-    </div>
 
     <script>
         // تابعی برای تولید رشته های تصادفی با طول مشخص که فقط از حروف 0 تا f باشد
@@ -151,10 +123,6 @@
 
             // مشخص کردن پیشوندها و سرشمار برای هر کشور
             switch (country) {
-                case 'turkey':
-                    dns6Prefix = '345c';
-                    dns4Prefix = '192';
-                    break;
                 case 'india':
                     dns6Prefix = '123c';
                     dns4Prefix = '103.21';
@@ -162,15 +130,7 @@
                 case 'japan':
                     dns6Prefix = '902b';
                     dns4Prefix = '210.1';
-                    break;                    
-                 case 'uk':
-                    dns6Prefix = '567c';
-                    dns4Prefix = '51.15';                   
-                    break;
-                case 'germany':
-                    dns6Prefix = '456c';
-                    dns4Prefix = '147';
-                    break;
+                    break;                  
                 case 'russia':
                     dns6Prefix = '456b';
                     dns4Prefix = '194.85';
@@ -179,17 +139,9 @@
                     dns6Prefix = '229c';
                     dns4Prefix = '185.56';
                     break;
-                case 'canada':
-                    dns6Prefix = '789f';
-                    dns4Prefix = '158.69';
-                    break;
                 case 'france':
                     dns6Prefix = '678e';
                     dns4Prefix = '37.59';
-                    break;
-                case 'uae':  // امارات
-                    dns6Prefix = '444c';
-                    dns4Prefix = '56';
                     break;
                 default:
                     dns6Prefix = '';
@@ -229,17 +181,6 @@
             }
         }
 
-        // نمایش انتخاب وی آی پی
-        document.getElementById('vipButton').onclick = function() {
-            const vipOptions = document.getElementById('vipOptions');
-            vipOptions.style.display = vipOptions.style.display === 'none' ? 'block' : 'none';
-        }
-
-        // نمایش انتخاب نوع نت
-        document.getElementById('netButton').onclick = function() {
-            const netOptions = document.getElementById('netOptions');
-            netOptions.style.display = netOptions.style.display === 'none' ? 'block' : 'none';
-        }
     </script>
 
 </body>
